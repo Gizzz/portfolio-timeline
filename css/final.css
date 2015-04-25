@@ -634,7 +634,7 @@ section.about .person h1 {
   font-weight: normal;
 }
 section.about .person p {
-  padding-top: 20px;
+  padding: 20px 10px 0;
   line-height: normal;
 }
 section.about .person .social {
@@ -653,9 +653,10 @@ section.about .person .social a i {
   color: #11171c;
   background: #fff;
   border-radius: 50%;
+  vertical-align: middle;
 }
 section.about .person .social a i.fa-dribbble {
-  font-size: 20px;
+  font-size: 22px;
 }
 section.about .person .social a i.fa-google-plus {
   font-size: 14px;
@@ -778,7 +779,7 @@ section.projects .project .img {
 section.projects .project .img img {
   max-width: 100%;
 }
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 400px) {
   main {
     display: -webkit-box;
     display: -webkit-flex;
@@ -795,41 +796,55 @@ section.projects .project .img img {
     width: 62.5%;
   }
 }
-/*@media screen and (min-width: 800px) {
-    section.about {
-        min-width: 200px;
-        max-width: 300px;
-        width: 25%;
-        
-    }
-
-    section.projects {
-        width: 75%;
-
-        .project {
-            display: flex;
-
-            .about {
-                width: 33.3%;
-            }
-
-            .img {
-                width: 66.6%;
-            }
-
-            &:after {
-                content: "";
-                display: block;
-                clear: both;
-            }
-        }
-    }
+@media screen and (min-width: 800px) {
+  section.about {
+    min-width: 200px;
+    max-width: 300px;
+    width: 25%;
+  }
+  section.about .info .list-outer .list-inner {
+    display: block;
+  }
+  section.projects {
+    width: 75%;
+  }
+  section.projects .project {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.projects .project .about {
+    width: 33.3%;
+    padding-left: 40px;
+  }
+  section.projects .project .about:before {
+    left: 20px;
+  }
+  section.projects .project .about:after {
+    left: 20px;
+  }
+  section.projects .project .img {
+    width: 66.6%;
+  }
+  section.projects .project:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }
-
 @media screen and (min-width: 1200px) {
-    main {
-        width: 1200px;
-        margin: auto;
-    }
-}*/
+  section.about {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+  section.projects {
+    width: 100%;
+  }
+  section.projects .project .img {
+    margin: auto;
+    text-align: center;
+  }
+}
 /*# sourceMappingURL=final.css.map */
