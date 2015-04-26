@@ -623,7 +623,7 @@ section.about .person {
   border-bottom: 1px solid #292f33;
 }
 section.about .person .photo {
-  background: url(../img/person@2x.png) no-repeat;
+  background: url(../img/person.png) no-repeat;
   -webkit-background-size: 100px 100px;
   background-size: 100px 100px;
   width: 100px;
