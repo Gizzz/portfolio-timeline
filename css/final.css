@@ -804,9 +804,6 @@ section.projects .project .img img {
     max-width: 300px;
     width: 25%;
   }
-  section.about .info .list-outer .list-inner {
-    display: block;
-  }
   section.projects {
     width: 75%;
   }
@@ -833,6 +830,11 @@ section.projects .project .img img {
     content: "";
     display: block;
     clear: both;
+  }
+}
+@media screen and (min-width: 1000px) {
+  section.about .info .list-outer .list-inner {
+    display: block;
   }
 }
 @media screen and (min-width: 1200px) {
