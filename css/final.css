@@ -623,12 +623,12 @@ section.about .person {
   border-bottom: 1px solid #292f33;
 }
 section.about .person .photo {
-  width: 100px;
-  height: 100px;
   margin: auto;
   margin-bottom: 25px;
 }
 section.about .person .photo img {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 section.about .person h1 {
