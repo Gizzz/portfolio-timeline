@@ -5,19 +5,19 @@ var mozjpeg = require('imagemin-mozjpeg');
 module.exports = function(grunt) {
   grunt.initConfig({
     imagemin: {                          // Task
-//      img_folder: {                         // Another target
-//        options: {                       // Target options
-//          optimizationLevel: 3,
-//          svgoPlugins: [{ removeViewBox: false }],
-//          use: [mozjpeg({quality: 90})]
-//        },
-//        files: [{
-//          expand: true,                  // Enable dynamic expansion
-//          cwd: 'img-src/',               // Src matches are relative to this path
-//          src: ['*.*'],                  // Actual patterns to match
-//          dest: 'img/'                   // Destination path prefix
-//        }]
-//      },
+      img_folder: {                         // Another target
+        options: {                       // Target options
+          optimizationLevel: 3,
+          svgoPlugins: [{ removeViewBox: false }],
+          use: [mozjpeg({quality: 90})]
+        },
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: 'img-src/',               // Src matches are relative to this path
+          src: ['*.*'],                  // Actual patterns to match
+          dest: 'img/'                   // Destination path prefix
+        }]
+      },
       pict_folder: {
         options: {                       // Target options
           optimizationLevel: 3,
