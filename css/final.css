@@ -2625,6 +2625,7 @@ section.projects .project .img img {
     min-width: 150px;
     width: 37.5%;
     max-width: 300px;
+    min-height: 100vh;
   }
   section.projects {
     min-width: 200px;
@@ -2645,6 +2646,7 @@ section.projects .project .img img {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    min-height: 33.333vh;
   }
   section.projects .project .about {
     width: 33.3%;

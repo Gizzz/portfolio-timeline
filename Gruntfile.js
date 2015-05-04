@@ -1,40 +1,93 @@
 /// <reference path="typings/gruntjs/gruntjs.d.ts"/>
 
 var mozjpeg = require('imagemin-mozjpeg');
+var imagemin_options = {
+  optimizationLevel: 3,
+  svgoPlugins: [{ removeViewBox: false }],
+  use: [mozjpeg({ quality: 90 })]
+};
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
-    imagemin: {                          // Task
-      img_folder: {                         // Another target
-        options: {                       // Target options
-          optimizationLevel: 3,
-          svgoPlugins: [{ removeViewBox: false }],
-          use: [mozjpeg({quality: 90})]
-        },
+    imagemin: {                          
+      img_folder: {                         
+        options: imagemin_options,
         files: [{
-          expand: true,                  // Enable dynamic expansion
-          cwd: 'img-src/',               // Src matches are relative to this path
-          src: ['*.*'],                  // Actual patterns to match
-          dest: 'img/'                   // Destination path prefix
+          expand: true,                  
+          cwd: 'img/img-src/',               
+          src: ['*.*'],                  
+          dest: 'img/'                   
         }]
       },
-      pict_folder: {
-        options: {                       // Target options
-          optimizationLevel: 3,
-          svgoPlugins: [{ removeViewBox: false }],
-          use: [mozjpeg({quality: 90})]
+    },
+    responsive_images: {
+      one_x: {
+        options: {
+          sizes: [{
+            name: 'sm',
+            width: 260,
+            quality: 85,
+          }, 
+          {
+            name: 'md',
+            width: 310,
+            quality: 85,
+          }, {
+            name: "lg",
+            width: 360,
+            quality: 85,
+          }, 
+          {
+            name: "src",
+            width: "100%",
+            quality: 85,
+          }]
         },
         files: [{
-          expand: true,                  // Enable dynamic expansion
-          cwd: 'pict-src/',               // Src matches are relative to this path
-          src: ['*.*'],                  // Actual patterns to match
-          dest: 'pict/'                   // Destination path prefix
+          expand: true,
+          cwd: 'pict/pict-src/',
+          src: ['proj-?.jpg'],
+          dest: 'pict/'
         }]
-      }
-    }
+      },
+      two_x: {
+        options: {
+          sizes: [{
+            name: 'sm',
+            width: 520,
+            quality: 85,
+          }, 
+          {
+            name: 'md',
+            width: 620,
+            quality: 85,
+          }, {
+            name: "lg",
+            width: 720,
+            quality: 85,
+          }, 
+          {
+            name: "src",
+            width: "100%",
+            quality: 85,
+          }]
+        },
+        files: [{
+          expand: true,
+          cwd: 'pict/pict-src/',
+          src: ['proj-?@2x.jpg'],
+          dest: 'pict/'
+        }]
+      },
+    },
   });
-  
+
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.registerTask('default', ['imagemin']);
+  grunt.loadNpmTasks('grunt-responsive-images');
+  
+  grunt.registerTask('default', [
+    'imagemin', 
+    'responsive_images',
+  ]);
 };
 
